@@ -31,7 +31,7 @@ Xcassets引入png，是按照引入时设置生成相对应的1x，2x或者3x图
 ##### 冗余图片的删除
 推荐：[LSUnusedResources](http://blog.lessfun.com/blog/2015/09/02/find-unused-resources-in-xcode-project/)，很好用，没有什么差错，直接用这个好了。
 
-另外其实还有一种冗余：有些人在引入1x，2x，3x图的时候，用了两个一样的图分别放入2x，3x。这样是完全没用的吧。Python写了个脚本，搜出来删掉了，开发了一个[脚本](https://github.com/YangSX21/Script-repository/tree/master/%E6%B8%85%E9%99%A4%E5%86%97%E4%BD%99%E5%9B%BE%E7%89%87)，可能不太好用，需要自行修改部分。
+另外其实还有一种冗余：有些人在引入1x，2x，3x图的时候，用了两个一样的图分别放入2x，3x。这样是完全没用的吧。Python写了个脚本，搜出来删掉了，开发了一个[脚本](https://github.com/YangSX21/Script-repository/tree/master/%E6%B8%85%E9%99%A4%E5%86%97%E4%BD%99%E5%9B%BE%E7%89%87)。可能不太好用，需要自行修改部分。
 #### 可执行文件的精简
 首先推荐付费ios开发工具，[AppCode](https://www.jetbrains.com/objc/)。可以使用inspect code功能进行无用类，方法等扫描。从网上口碑来说用起来不错。至于本人，在下载之后的试用期间，大概是公司项目太庞大了，一整天都没扫描完。而且公司也没有出钱买这个软件的意思……
 
