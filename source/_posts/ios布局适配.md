@@ -18,11 +18,10 @@ tags: ios
 
 ### ios11的适配
 ios11在页面上导致的主要差别在navigation和tableView。
-1. navigation的层级结构变动，导致导航栏的文字和图标发生混乱。
-修改了Iwind中图片查看见面的navigationBar的位置，在ios11情况下，强行将位置下移状态栏高度。
 
-2. tableView进行了更改，在ios11中，tableView默认使用了self-sizing。
-self-sizing，可以通过实现estimatedRowHeight相关的属性来展示动态的内容。而如果之前的项目没有设置estimatedRowHeight，则会导致出现问题。可以通过以下代码关闭该属性，或者可以对其进行正确的设置。
+1. navigation的层级结构变动，导致导航栏的文字和图标发生混乱。
+在ios11情况下，强行下移状态栏高度,比较粗暴，但是有效。
+2. tableView进行了更改，在ios11中，tableView默认使用了self-sizing。self-sizing，可以通过实现estimatedRowHeight相关的属性来展示动态的内容。而如果之前的项目没有设置estimatedRowHeight，则会导致出现问题。可以通过以下代码关闭该属性，或者可以对其进行正确的设置。
 ```
 self.tableView.estimatedRowHeight = 0;
 self.tableView.estimatedSectionHeaderHeight = 0;
@@ -75,16 +74,19 @@ IPad横屏主要处理方式主要是由之前页面的布局方式所决定。
 如果之前的页面按照绝对布局进行编写，那么适配时需要想办法拦住横竖屏切换的事件，在里面重新设置页面布局。
 ### 绝对布局
 #### 通过layoutSubviews刷新
-1. viewcontroller的viewWillLayoutSubviews和viewDidLayoutSubviews。
+viewcontroller的viewWillLayoutSubviews和viewDidLayoutSubviews。
+
 这两个方法顾名思义是在自己的[self.view layoutsubviews]时进行调用的。所以可以认为是在self.view的layoutsubviews方法的外部体现，因为没有办法直接去改self.view的layoutsubviews方法。
 这两个方法首先会在viewcontroller初始化的后的viewWillAppear之后进行调用。首先在ViewController初始化的时候self.view是一个nil，但是在用到该View的时候会去使用loadView进行创建，这时候设置了frame，所以会调用layoutsubviews。
-2. view的layoutsubviews方法。
-     1. init初始化不会触发layoutSubviews，但是是用initWithFrame 进行初始化时，当rect的值 非CGRectZero时,也会触发。
-     2. addSubview会触发layoutSubviews。如果添加的子控件没有Frame,不会调用;
-     3. 设置view的Frame会触发layoutSubviews，前提是该View 已经被添加到父控件，当然前提是frame的值设置前后发生了变化, 此时View和其父控件的layoutSubviews都会调用;
-     4. 滚动一个UIScrollView会触发layoutSubviews ,因滚动UIScrollView,其子控件肯定对应会刷新,也就肯定会被调用;
-     5. 旋转Screen会触发控制器对应UIView上的layoutSubviews事件
-     6. 改变一个UIView大小的时候也会触发父UIView上的layoutSubviews事件
+
+view的layoutsubviews方法。
+
+- init初始化不会触发layoutSubviews，但是是用initWithFrame 进行初始化时，当rect的值 非CGRectZero时,也会触发。
+- addSubview会触发layoutSubviews。如果添加的子控件没有Frame,不会调用;
+- 设置view的Frame会触发layoutSubviews，前提是该View 已经被添加到父控件，当然前提是frame的值设置前后发生了变化, 此时View和其父控件的layoutSubviews都会调用;
+- 滚动一个UIScrollView会触发layoutSubviews ,因滚动UIScrollView其子控件肯定对应会刷新,也就肯定会被调用;
+= 旋转Screen会触发控制器对应UIView上的layoutSubviews事件
+改变一个UIView大小的时候也会触发父UIView上的layoutSubviews事件
 
 总结一下是，该View的frame发生变动，会调用本身的layoutSubviews，然后会传导上去触发父控件的layoutSubviews。不对，从外向里的，会先调用父控件的layoutSubviews，然后再调用本身的layoutsubviews。
 
