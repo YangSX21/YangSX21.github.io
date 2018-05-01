@@ -123,4 +123,11 @@ if (![UIDevice currentDevice].generatesDeviceOrientationNotifications) {
 首先，与上面绝对布局里面提到的方法一一对应，有viewcontroller中的updateViewConstraints方法，View中的updateConstraints方法。强制刷新的setNeedsUpdateConstraints和updateConstraintsIfNeeded。不过updateConstraints最后需要调用[super updateConstraints]，否则会崩。
 然后，约束布局在本质上将计算frame的工作交给代码，所以最后是会转换成绝对布局的。所以在调用updateConstraints之后会调用layoutsubviews。尽量不要混用，会比较混乱。
 
-在做iPad横屏过程中，明显感觉到约束布局的优势，所以之后在尽可能情况下基本都是使用约束布局进行开发了。
+> 在做页面适配过程中，明显感觉到约束布局的优势，所以之后在尽可能情况下基本都是使用约束布局进行开发了。
+
+## 参考文献
+1. [layoutSubviews 调用时机](http://blog.sina.com.cn/s/blog_9cd71e570102wm5z.html)
+2. [Autolayout和Frame](https://juejin.im/entry/5971c2e3f265da6c2d2ca2ae)
+3. [Auto Layout 中的 setNeedsUpdateConstraints 和 layoutIfNeeded](http://blog.devcheng.com/2017/05/14/2017-05-Auto-Layout-setNeedsUpdateConstraints-layoutIfNeeded/)
+4. [iPhone X的简单适配](http://www.cocoachina.com/ios/20170917/20590.html)；
+5. [iphone屏幕适配规则及启动图设置方法](http://blog.csdn.net/lotheve/article/details/49682513)；
