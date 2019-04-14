@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>博客中添加图片 | 夜航扁舟</title>
+<meta name="description" content="仰天大笑出门去，我辈岂是蓬蒿人">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="shortcut icon" href="https://yangsx21.github.io//favicon.ico">
+<link rel="stylesheet" href="https://yangsx21.github.io//styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://yangsx21.github.io/">
+        <img src="https://yangsx21.github.io//images/avatar.png" class="site-logo">
+        <h1 class="site-title">夜航扁舟</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="site-description">
+      仰天大笑出门去，我辈岂是蓬蒿人
+    </div>
+    <div class="site-footer">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;杨自横
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">博客中添加图片</h2>
+            <div class="post-date">2018-05-20</div>
+            
+            <div class="post-content">
+              <blockquote>
+<p>这是篇短文，主要是在写前面的博客时候遇到的上传图片问题的归纳的解决方法记录。</p>
+</blockquote>
+<!--more-->
+
+<h3 id="需求">需求</h3><p>我需要在hexo中正常使用图片，然后需要一个功能是调整图片大小，最后是不借助外部图源。</p>
+<h3 id="问题">问题</h3><ol>
+<li><p>在markdown中，插入图片主要使用的语法是</p>
+<pre><code> ![image](url)</code></pre><p> 这个语法在hexo中使用，有一个问题是在首页无法正常显示图片。</p>
+</li>
+<li><p>调整图片大小，在markdown中是通过直接插入CSS样式解决。    </p>
+<pre><code> ![test image size](url){:height=&quot;50%&quot; width=&quot;50%&quot;}</code></pre><p> 这个在hexo中也会出现问题，没办法办法生效。</p>
+</li>
+</ol>
+<h3 id="实现方式">实现方式</h3><p>首先图源问题，可以使用本地图片。这个在hexo中config.yml中的选项设为true，就会在新建博客的时候同时新建同名的资源文件夹，使用相对路径直接引用就行了。</p>
+<h4 id="引用图片问题">引用图片问题</h4><p>官方给出的解决方案是标签插件。</p>
+<pre><code>{% img [class names] /path/to/image [width] [height] [title text [alt text]] %}</code></pre><p>语法看着很美好，用起来也非常不错，但是我遇到了非常蛋疼的问题，我看不懂这个语法，然后也搜不到更具体的说明方式，我能够引用图片并且没有上面的问题一，可是我设置图片大小一直无法成功，只能放弃。</p>
+<h3 id="解决方案">解决方案</h3><p>最后的解决方案是一种妥协的方案，首先是通过</p>
+<pre><code>&lt;img src=&quot;&quot; width=&quot;50%&quot; height=&quot;50%&quot;&gt;</code></pre><p>这种方式成功实现了图片的大小调整。而首页无法出现图片的状况我直接让首页折叠进行了规避。</p>
+<p>大致就是在首页导言下方插入</p>
+<pre><code>&lt;!--more--&gt;</code></pre><p>使得导言以下的内容进行详情才能阅读。</p>
+<h3 id="参考文献">参考文献</h3><ol>
+<li><a href="https://hexo.io/zh-cn/docs/">hexo官方文档</a></li>
+<li><a href="https://www.zhihu.com/question/23378396">知乎问答：markdown中插入图片怎么定义图片的大小或比例</a></li>
+</ol>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://yangsx21.github.io//tag/fI0UD0hR2" class="tag">
+                    零散技术知识
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://yangsx21.github.io//post/guang-shang-hai-li-shi-bo-wu-guan">
+                  <h3 class="post-title">
+                    逛上海历史博物馆
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
