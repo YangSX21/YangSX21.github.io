@@ -1,77 +1,98 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>逛中华艺术宫 | 夜航扁舟</title>
+<meta name="description" content="仰天大笑出门去，我辈岂是蓬蒿人">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="shortcut icon" href="https://yangsx21.github.io//favicon.ico">
 <link rel="stylesheet" href="https://yangsx21.github.io//styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://yangsx21.github.io/">
-  <img class="avatar" src="https://yangsx21.github.io//images/avatar.png" alt="" width="80px" height="80px">
-  </a>
-  <h1 class="site-title">
-    夜航扁舟
-  </h1>
-  <p class="site-description">
-    仰天大笑出门去，我辈岂是蓬蒿人
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://yangsx21.github.io/">
+        <img class="avatar" src="https://yangsx21.github.io//images/avatar.png" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://yangsx21.github.io/">
+        <h1 class="site-title">夜航扁舟</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
       
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              逛中华艺术宫
-            </h2>
-            <div class="post-info">
-              <time class="post-time">
-                · 2018-06-03 ·
-              </time>
-              
-                <a href="https://yangsx21.github.io//tag/lnoy5hv0O" class="post-tags">
-                  # 日常
-                </a>
-              
-            </div>
-            <div class="post-content">
-              <blockquote>
+          <h2 class="post-title">逛中华艺术宫</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2018-06-03</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://yangsx21.github.io//tag/lnoy5hv0O">
+                    日常
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <blockquote>
 <p>本来这周不想出门的，但是有个快递忘在了公司，既然要出门去拿就顺便去逛了下附近的博物馆。搜索了下发现了这个，中华艺术宫。</p>
 </blockquote>
 <!--more-->
@@ -95,32 +116,44 @@
 <p>就这么溜了一圈，差不多就花了一个多小时，确实没什么太多的印象残留，但还是没那么糟。</p>
 <p>有个好玩点的事情，我是跟着一群日本人进馆和出馆的，虽然中间没有跟着。因为入口不准带导游的小旗子进来，他们拿着一个鲤鱼旗，然后一路上安安静静的，排成一排参观，真是有趣，跟刻板印象一模一样啊。</p>
 
-            </div>
-          </article>
+          </div>
         </div>
-    
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://yangsx21.github.io//post/bo-ke-zhong-tian-jia-tu-pian">
-              <h3 class="post-title">
-                博客中添加图片
-              </h3>
-            </a>
-          </div>  
-        
 
         
-    
-        <div class="site-footer">
+          <div class="next-post">
+            <a class="purple-link" href="https://yangsx21.github.io//post/bo-ke-zhong-tian-jia-tu-pian">
+              <h3 class="post-title">
+                下一篇：博客中添加图片
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">仰天大笑出门去，我辈岂是蓬蒿人</div>
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;杨自横
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>

@@ -1,128 +1,177 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-  <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>ios | 夜航扁舟</title>
+<meta name="description" content="仰天大笑出门去，我辈岂是蓬蒿人">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="shortcut icon" href="https://yangsx21.github.io//favicon.ico">
 <link rel="stylesheet" href="https://yangsx21.github.io//styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://yangsx21.github.io/">
-  <img class="avatar" src="https://yangsx21.github.io//images/avatar.png" alt="" width="80px" height="80px">
-  </a>
-  <h1 class="site-title">
-    夜航扁舟
-  </h1>
-  <p class="site-description">
-    仰天大笑出门去，我辈岂是蓬蒿人
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://yangsx21.github.io/">
+        <img class="avatar" src="https://yangsx21.github.io//images/avatar.png" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://yangsx21.github.io/">
+        <h1 class="site-title">夜航扁舟</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+
         <div class="current-tag-container">
-            <h2 class="title">
-                标签：#ios
-            </h2> 
+          <h2 class="title">
+            <i class="icon icon-pricetags-outline"></i> ios
+          </h2> 
         </div>
-        <div class="post-container">
-  
-    <article class="post">
+
+        
+<section class="post-item">
+    <div class="content">
       <a href="https://yangsx21.github.io//post/ios-bu-ju-gua-pei">
         <h2 class="post-title">ios布局适配</h2>
       </a>
-      <div class="post-info">
-        <time class="post-time">
-          · 2018-04-30 ·
-        </time>
-        
-          <a href="https://yangsx21.github.io//tag/tEQIfMLT-" class="post-tag">
-            # ios
-          </a>
-        
-      </div>
-      
       <div class="post-abstract">
         <blockquote>
 <p>在去年11月份，那时候iPhoneX刚出货，公司的应用也是提前就开始准备适配IPhoneX，还做梦一样想着能不能在app store获得优先适配的推荐位。这个适配是分给我的任务，当时完成之后准备码一篇博客，但是懒得很，后来发现内容也不多，放下之后过了快半年了。<br>上个月，因为一直有用户提意见，公司准备给iPad用户适配横屏，这个活也是加到了我身上，现在大致把活干完了。<br>正好这俩有相似之处，就把笔记理一下写篇文章。</p>
 </blockquote>
 
-      </di>
-    </article>
-  
-    <article class="post">
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2018-04-30</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://yangsx21.github.io//tag/tEQIfMLT-">
+                ios
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
       <a href="https://yangsx21.github.io//post/ios-an-zhuang-bao-shou-shen">
         <h2 class="post-title">ios安装包瘦身</h2>
       </a>
-      <div class="post-info">
-        <time class="post-time">
-          · 2017-09-10 ·
-        </time>
-        
-          <a href="https://yangsx21.github.io//tag/tEQIfMLT-" class="post-tag">
-            # ios
-          </a>
-        
-      </div>
-      
       <div class="post-abstract">
         <blockquote>
 <p>入职两个多月，最近的一个月做的都是安装包瘦身，其实最后效果也不是特别明显，但还是整理一下，因为之后大概不做这个瘦身了。</p>
 </blockquote>
 
-      </di>
-    </article>
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2017-09-10</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://yangsx21.github.io//tag/tEQIfMLT-">
+                ios
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+
+<div class="pagination-container">
+  
   
 </div>
 
-        <div class="pagination-container">
-  
-  
-</div>
 
-        <div class="site-footer">
+      </div>
+
+      <div class="site-footer">
+  <div class="slogan">仰天大笑出门去，我辈岂是蓬蒿人</div>
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;杨自横
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>
