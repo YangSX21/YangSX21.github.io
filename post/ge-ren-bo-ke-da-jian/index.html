@@ -4,7 +4,8 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>个人博客搭建 | 夜航扁舟</title>
-<link rel="shortcut icon" href="https://yangsx21.github.io//favicon.ico">
+<link rel="shortcut icon" href="https://yangsx21.github.io//favicon.ico?v=1555757748065">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://yangsx21.github.io//styles/main.css">
 
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -17,7 +18,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://yangsx21.github.io/">
-  <img class="avatar" src="https://yangsx21.github.io//images/avatar.png" alt="" width="80px" height="80px">
+  <img class="avatar" src="https://yangsx21.github.io//images/avatar.png?v=1555757748065" alt="">
   </a>
   <h1 class="site-title">
     夜航扁舟
@@ -46,6 +47,23 @@
       
     
   </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/YangSX21" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
 </div>
 
       
@@ -64,6 +82,7 @@
                 </a>
               
             </div>
+            
             <div class="post-content">
               <blockquote>
 <p>准备建一个个人博客，不仅是技术，也有一些个人的小说啊设定之类不太羞耻的东西准备往上放放。</p>
@@ -77,69 +96,113 @@
 <li>独立博客，优势在于高度定制化，另外是没有严重的监管，不过需要折腾一下。</li>
 </ul>
 <p>正好最近可以说是我还喜欢的折腾的时候，就准备搭一个独立博客，完全自己搭服务器建站就太难了，搜了一下准备以github+hexo进行搭建。搞了半个下午搞定了，记录一下。</p>
-<h4 id="1. 装hexo">1. 装Hexo</h4><p><a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html">参考资料</a><br>Hexo是一个简单高效的博客框架，能够设置博客的主题等各种要素。</p>
+<h4 id="1-装hexo">1. 装Hexo</h4>
+<p><a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html">参考资料</a>
+Hexo是一个简单高效的博客框架，能够设置博客的主题等各种要素。</p>
 <ul>
 <li>安装前提，git for windows（在win平台下），npm（下载工具），  node.js（hexo运行的基础环境）。</li>
 <li>npm install -g hexo #安装</li>
 <li>新建一个目录，作为之后存放博客文件的位置。cd进该目录下。</li>
-<li>hexo init #初始化<br><strong>这样，就初步安装好了hexo。</strong></li>
+<li>hexo init #初始化
+<strong>这样，就初步安装好了hexo。</strong></li>
 <li>hexo g #内容更新</li>
-<li>hexo s #内容预览<br><strong>这时你可以进入localhost:4000进行博客内容的预览</strong><h4 id="2. 配置github">2. 配置github</h4></li>
+<li>hexo s #内容预览
+<strong>这时你可以进入localhost:4000进行博客内容的预览</strong></li>
+</ul>
+<h4 id="2-配置github">2. 配置github</h4>
+<ul>
 <li>在你的gihub新建一个仓库，命名为YourName.github.io。如果不进行域名绑定，这个就是你博客的网址了。</li>
 <li>绑定域名（可选），我没绑，留空。</li>
-<li>配置SSH Key（可选），这个其实只是生成秘钥来规避每次提交GitHub都需要输入用户名和密码，安全性也要更好一点。<pre><code>cd ~/.ssh
+<li>配置SSH Key（可选），这个其实只是生成秘钥来规避每次提交GitHub都需要输入用户名和密码，安全性也要更好一点。</li>
+</ul>
+<pre><code>cd ~/.ssh
 ls #如果能看到id_rsa.pub 或 id_dsa.pub 文件已经存在，就跳过下一步
-ssh-keygen -t rsa -C &quot;your_email@example.com&quot; #生成秘钥</code></pre>然后记事本打开在.ssh文件夹下面的id_rsa.pub，复制公钥，黏贴到GitHub上个人设置 -&gt; SSH and GPG keys -&gt; New SSH key就行了。</li>
-<li>在cd进hexo的根目录，安装hexo-deployer-git，这个插件能够上传hexo的内容进GitHub。<pre><code>npm install hexo-deployer-git --save</code></pre></li>
-<li>打开hexo根目录下面_config.yml，添加<pre><code>deploy:
+ssh-keygen -t rsa -C &quot;your_email@example.com&quot; #生成秘钥
+</code></pre>
+<p>然后记事本打开在.ssh文件夹下面的id_rsa.pub，复制公钥，黏贴到GitHub上个人设置 -&gt; SSH and GPG keys -&gt; New SSH key就行了。</p>
+<ul>
+<li>在cd进hexo的根目录，安装hexo-deployer-git，这个插件能够上传hexo的内容进GitHub。</li>
+</ul>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre>
+<ul>
+<li>打开hexo根目录下面_config.yml，添加</li>
+</ul>
+<pre><code>deploy:
 type: git
 repository: git@github.com:yourname/yourname.github.io.git
-branch: master</code></pre></li>
-<li>_config,yml文件下面的url项的值改为<a href="http://yourname.github.io/">http://yourname.github.io/</a></li>
+branch: master
+</code></pre>
+<ul>
+<li>_config,yml文件下面的url项的值改为http://yourname.github.io/</li>
 </ul>
 <p><strong>至此就配置完成，你可以通过hexo d把更新推送到github的仓库中。</strong></p>
-<h4 id="3. 博客的定制">3. 博客的定制</h4><p>hexo的各种风格样式，博客的各类要素都可以自行定制。这些配置都在hexo根目录下面的_config.yml文件中，里面说的很简单明了，实在不理解可以看<a href="https://hexo.io/zh-cn/docs/configuration.html">hexo官方说明</a>。<br>下面说一下我花时间玩的两个配置。主题和favicon。</p>
-<h5 id="1）主题配置">1）主题配置</h5><p>主题能够设置很多东西，显著改善整个博客的面貌，说不定能加强写博客的动力。推荐这个<a href="https://www.zhihu.com/question/24422335">知乎帖</a>。</p>
+<h4 id="3-博客的定制">3. 博客的定制</h4>
+<p>hexo的各种风格样式，博客的各类要素都可以自行定制。这些配置都在hexo根目录下面的_config.yml文件中，里面说的很简单明了，实在不理解可以看<a href="https://hexo.io/zh-cn/docs/configuration.html">hexo官方说明</a>。
+下面说一下我花时间玩的两个配置。主题和favicon。</p>
+<h5 id="1主题配置">1）主题配置</h5>
+<p>主题能够设置很多东西，显著改善整个博客的面貌，说不定能加强写博客的动力。推荐这个<a href="https://www.zhihu.com/question/24422335">知乎帖</a>。</p>
 <p>最后我选择的主题是<a href="https://github.com/litten/hexo-theme-yilia">yilia</a>，应该是国人的作品，怎么配置在他的页面上说的很清楚，我就不卖弄了。</p>
-<h5 id="2）favicon的配置">2）favicon的配置</h5><p>favicon就是你浏览器浏览该页面或者收藏该页面的时候显示在标签页左边的那个图标。这是个小东西，我去捯饬它主要是因为chrome的默认——那个纸张图案太丑了。</p>
+<h5 id="2favicon的配置">2）favicon的配置</h5>
+<p>favicon就是你浏览器浏览该页面或者收藏该页面的时候显示在标签页左边的那个图标。这是个小东西，我去捯饬它主要是因为chrome的默认——那个纸张图案太丑了。</p>
 <p>这个的配置在你的主题的根目录下面的_config.yml中，（注意：和之前说的不是一个文件），配置是很简单的，值为图片地址就行。</p>
 <p><em>我的一些提醒</em>，图片要求是png格式的正方形，像素我建议160x160左右吧，这样大小20+k就不会很模糊，另外我觉得把图片切成圆形要好看的多，不怕麻烦就p一下吧。</p>
-<h4 id="4. 写博上传">4. 写博上传</h4><ul>
-<li>hexo n &#39;title&#39; 简单的一条命令，会在/source/_post文件夹下面生成一个markdown格式的文档，在里面写文就行了。</li>
+<h4 id="4-写博上传">4. 写博上传</h4>
+<ul>
+<li>hexo n 'title' 简单的一条命令，会在/source/_post文件夹下面生成一个markdown格式的文档，在里面写文就行了。</li>
 </ul>
 <p>markdown编辑工具，我推荐<a href="http://www.jianshu.com/">简书</a>，作为跨平台在线编辑器非常好用，PC端可以使用web能够随时预览，移动端有相应的app，你可以不进行发表，作为一个在线编辑器使用，还有云存储功能，何乐而不为呢。</p>
 <ul>
 <li>依次运行hexo g/hexo d就行，当然你应该会先运行hexo s进行预览检查。</li>
 </ul>
-<h4 id="5. 版权申明">5. 版权申明</h4><p>版权申明挺必要的，勿以善小而不为。<br>我是参照<a href="https://blog.zscself.com/2017/01/25/ee4d9ecb/">此文</a>进行设置，非常感谢这位任豚膜法师。</p>
-<h4 id="6. 评论系统">6. 评论系统</h4><p>本来属意多说，但不久之前多说挂了，也就绝了寻找第三方评论系统的心，实在是怕突然有个万一怎么办。</p>
+<h4 id="5-版权申明">5. 版权申明</h4>
+<p>版权申明挺必要的，勿以善小而不为。
+我是参照<a href="https://blog.zscself.com/2017/01/25/ee4d9ecb/">此文</a>进行设置，非常感谢这位任豚膜法师。</p>
+<h4 id="6-评论系统">6. 评论系统</h4>
+<p>本来属意多说，但不久之前多说挂了，也就绝了寻找第三方评论系统的心，实在是怕突然有个万一怎么办。</p>
 <p>不过多说挂了，受影响的还轮不到我，正好有个国内的大神imsun也受了影响，所以他造了个轮子，基于Github Issues的<a href="https://imsun.net/posts/gitment-introduction/">Gitment</a>。感觉对于我这种托管在GitHub上面的博客实在是绝配，就准备接入了。</p>
 <p>参考<a href="http://dcison.top/2017/08/26/yilia%E4%B8%BB%E9%A2%98%E6%90%AD%E9%85%8DGitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">此文</a>进行配置。</p>
-<h4 id="7. 多机更新">7. 多机更新</h4><p>计算机是不会跟着一辈子的，坏掉是迟早的事情，一直有个深切的忧虑就是怕计算机突然就死了。所以喜欢多地备份，现在是喜欢云备份。</p>
+<h4 id="7-多机更新">7. 多机更新</h4>
+<p>计算机是不会跟着一辈子的，坏掉是迟早的事情，一直有个深切的忧虑就是怕计算机突然就死了。所以喜欢多地备份，现在是喜欢云备份。</p>
 <p>这个博客也是这样，必须和自己的pc进行解耦，所以设置了一番。参照<a href="http://chown-jane-y.coding.me/2017/03/15/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%94%B5%E8%84%91%E4%B8%8A%E5%90%8C%E6%97%B6%E5%86%99hexo%E5%8D%9A%E5%AE%A2%EF%BC%9F/">这个文章</a>。文章非常详细，一步步照着做就好。</p>
 <p>基本步骤是本地初始化hexo项目后，把目录推送到master分支。</p>
 <pre><code>git init
-
+ 
 //把博客目录下所有文件推送到master分支
 git remote add origin git@github:chown-jane-y/chown-jane-y.github.io.git
 git add .
 git commit -m &quot;first add hexo source code&quot;
-git push origin master</code></pre><p>然后在远程创建hexo分支，并且设为默认，本地也同样。</p>
+git push origin master
+</code></pre>
+<p>然后在远程创建hexo分支，并且设为默认，本地也同样。</p>
 <p>之后有修改就进行同步。</p>
 <pre><code>git add .
 git commit -m  &quot;&quot;
 git push origin hexo
-</code></pre><h4 id="8. 阅读计数">8. 阅读计数</h4><p>其实这大概是一个很没用的功能，游客应该没什么兴趣想去看有多少人阅读这篇文章，访问这个博客的。</p>
+
+</code></pre>
+<h4 id="8-阅读计数">8. 阅读计数</h4>
+<p>其实这大概是一个很没用的功能，游客应该没什么兴趣想去看有多少人阅读这篇文章，访问这个博客的。</p>
 <p>不过还是准备加一下不蒜子，一个是因为配置很简单，顺手就能加了，另一个其实想要用来统计一下，又懒得去找统计工具，索性就用不蒜子代替一下吧。</p>
 <p>配置方法直接看<a href="http://ibruce.info/2015/04/04/busuanzi/">官方文档</a>，就跟他家的宣传一样，两行代码搞定一切。</p>
-<h4 id="9. 添加rss">9. 添加RSS</h4><p>最近开始使用RSS订阅自己关注的博客，真的是一个相见恨晚的技术，所以顺便给自己的小博客添加一下RSS功能。</p>
+<h4 id="9-添加rss">9. 添加RSS</h4>
+<p>最近开始使用RSS订阅自己关注的博客，真的是一个相见恨晚的技术，所以顺便给自己的小博客添加一下RSS功能。</p>
 <ol>
-<li><p>安装RSS生成插件</p>
-<pre><code> npm install hexo-generator-feed --save</code></pre></li>
-<li><p>安装sitemap生成插件</p>
-<pre><code> npm install hexo-generator-sitmap --save</code></pre></li>
-<li><p>在theme/yilia/_config.yml中添加图标</p>
-<pre><code> rss: /atom.xml</code></pre></li>
+<li>
+<p>安装RSS生成插件</p>
+<pre><code>npm install hexo-generator-feed --save
+</code></pre>
+</li>
+<li>
+<p>安装sitemap生成插件</p>
+<pre><code>npm install hexo-generator-sitmap --save
+</code></pre>
+</li>
+<li>
+<p>在theme/yilia/_config.yml中添加图标</p>
+<pre><code>rss: /atom.xml
+</code></pre>
+</li>
 </ol>
 <blockquote>
 <p>结束了，应该不会折腾了。</p>
