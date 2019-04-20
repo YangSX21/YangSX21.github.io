@@ -1,280 +1,212 @@
-
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>夜航扁舟</title>
-<meta name="description" content="仰天大笑出门去，我辈岂是蓬蒿人">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
 <link rel="shortcut icon" href="https://yangsx21.github.io//favicon.ico">
 <link rel="stylesheet" href="https://yangsx21.github.io//styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://yangsx21.github.io/">
-        <img class="avatar" src="https://yangsx21.github.io//images/avatar.png" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://yangsx21.github.io/">
-        <h1 class="site-title">夜航扁舟</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://yangsx21.github.io/">
+  <img class="avatar" src="https://yangsx21.github.io//images/avatar.png" alt="" width="80px" height="80px">
+  </a>
+  <h1 class="site-title">
+    夜航扁舟
+  </h1>
+  <p class="site-description">
+    仰天大笑出门去，我辈岂是蓬蒿人
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
   </div>
 </div>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
-        
-        
-<section class="post-item">
-    <div class="content">
+    
+        <div class="post-container">
+  
+    <article class="post">
       <a href="https://yangsx21.github.io//post/guang-zhong-hua-yi-zhu-gong">
         <h2 class="post-title">逛中华艺术宫</h2>
       </a>
+      <div class="post-info">
+        <time class="post-time">
+          · 2018-06-03 ·
+        </time>
+        
+          <a href="https://yangsx21.github.io//tag/lnoy5hv0O" class="post-tag">
+            # 日常
+          </a>
+        
+      </div>
+      
       <div class="post-abstract">
         <blockquote>
 <p>本来这周不想出门的，但是有个快递忘在了公司，既然要出门去拿就顺便去逛了下附近的博物馆。搜索了下发现了这个，中华艺术宫。</p>
 </blockquote>
 
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2018-06-03</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://yangsx21.github.io//tag/lnoy5hv0O">
-                日常
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
+      </di>
+    </article>
+  
+    <article class="post">
       <a href="https://yangsx21.github.io//post/bo-ke-zhong-tian-jia-tu-pian">
         <h2 class="post-title">博客中添加图片</h2>
       </a>
+      <div class="post-info">
+        <time class="post-time">
+          · 2018-05-20 ·
+        </time>
+        
+          <a href="https://yangsx21.github.io//tag/fI0UD0hR2" class="post-tag">
+            # 零散技术知识
+          </a>
+        
+      </div>
+      
       <div class="post-abstract">
         <blockquote>
 <p>这是篇短文，主要是在写前面的博客时候遇到的上传图片问题的归纳的解决方法记录。</p>
 </blockquote>
 
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2018-05-20</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://yangsx21.github.io//tag/fI0UD0hR2">
-                零散技术知识
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
+      </di>
+    </article>
+  
+    <article class="post">
       <a href="https://yangsx21.github.io//post/guang-shang-hai-li-shi-bo-wu-guan">
         <h2 class="post-title">逛上海历史博物馆</h2>
       </a>
+      <div class="post-info">
+        <time class="post-time">
+          · 2018-05-20 ·
+        </time>
+        
+          <a href="https://yangsx21.github.io//tag/lnoy5hv0O" class="post-tag">
+            # 日常
+          </a>
+        
+      </div>
+      
       <div class="post-abstract">
         <blockquote>
 <p>上周去看牙，最后牙没啥问题不过去闲逛了半天，发现上海南京路那里有好多不错的书店和博物馆。回来查了下，发现上海有很多的不错的博物馆，身为非自愿独身肥宅，正好周末可以去逛逛博物馆。</p>
 </blockquote>
 
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2018-05-20</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://yangsx21.github.io//tag/lnoy5hv0O">
-                日常
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
+      </di>
+    </article>
+  
+    <article class="post">
       <a href="https://yangsx21.github.io//post/ios-bu-ju-gua-pei">
         <h2 class="post-title">ios布局适配</h2>
       </a>
+      <div class="post-info">
+        <time class="post-time">
+          · 2018-04-30 ·
+        </time>
+        
+          <a href="https://yangsx21.github.io//tag/tEQIfMLT-" class="post-tag">
+            # ios
+          </a>
+        
+      </div>
+      
       <div class="post-abstract">
         <blockquote>
 <p>在去年11月份，那时候iPhoneX刚出货，公司的应用也是提前就开始准备适配IPhoneX，还做梦一样想着能不能在app store获得优先适配的推荐位。这个适配是分给我的任务，当时完成之后准备码一篇博客，但是懒得很，后来发现内容也不多，放下之后过了快半年了。<br>上个月，因为一直有用户提意见，公司准备给iPad用户适配横屏，这个活也是加到了我身上，现在大致把活干完了。<br>正好这俩有相似之处，就把笔记理一下写篇文章。</p>
 </blockquote>
 
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2018-04-30</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://yangsx21.github.io//tag/tEQIfMLT-">
-                ios
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
+      </di>
+    </article>
+  
+    <article class="post">
       <a href="https://yangsx21.github.io//post/ios-an-zhuang-bao-shou-shen">
         <h2 class="post-title">ios安装包瘦身</h2>
       </a>
+      <div class="post-info">
+        <time class="post-time">
+          · 2017-09-10 ·
+        </time>
+        
+          <a href="https://yangsx21.github.io//tag/tEQIfMLT-" class="post-tag">
+            # ios
+          </a>
+        
+      </div>
+      
       <div class="post-abstract">
         <blockquote>
 <p>入职两个多月，最近的一个月做的都是安装包瘦身，其实最后效果也不是特别明显，但还是整理一下，因为之后大概不做这个瘦身了。</p>
 </blockquote>
 
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2017-09-10</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://yangsx21.github.io//tag/tEQIfMLT-">
-                ios
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
+      </di>
+    </article>
+  
+    <article class="post">
       <a href="https://yangsx21.github.io//post/ge-ren-bo-ke-da-jian">
         <h2 class="post-title">个人博客搭建</h2>
       </a>
+      <div class="post-info">
+        <time class="post-time">
+          · 2017-09-03 ·
+        </time>
+        
+          <a href="https://yangsx21.github.io//tag/fI0UD0hR2" class="post-tag">
+            # 零散技术知识
+          </a>
+        
+      </div>
+      
       <div class="post-abstract">
         <blockquote>
 <p>准备建一个个人博客，不仅是技术，也有一些个人的小说啊设定之类不太羞耻的东西准备往上放放。</p>
 </blockquote>
 
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2017-09-03</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://yangsx21.github.io//tag/fI0UD0hR2">
-                零散技术知识
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
+      </di>
+    </article>
+  
+</div>
+
     
-  </section>
-
-
-<div class="pagination-container">
+        <div class="pagination-container">
   
   
 </div>
 
-
-      </div>
-
-      <div class="site-footer">
-  <div class="slogan">仰天大笑出门去，我辈岂是蓬蒿人</div>
+    
+        <div class="site-footer">
   杨自横
 </div>
 
-
-    </div>
-    <script type="application/javascript">
-
-hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>
